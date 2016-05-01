@@ -1,0 +1,18 @@
+
+{% extends "core/base.html" %}
+
+{% block content %}
+<center><
+<form action="" method= "get">
+<label>Hello <b><i>{{username}},</i></b></label>
+<label>You've been added as a part of meeting <b><i>{{Notificname}}</i></b></label>
+<input type="radio" name="choice" value="Accept">Accept
+    <br>
+    <input type="radio" name="choice" value="Decline">Decline
+<input type="hidden" name="meetname" value="{{Notificname}}">
+
+<br><br><input type="submit" value="Confirm">
+
+</form>
+    </center>
+{% endblock content %}

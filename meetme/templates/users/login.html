@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Meet me</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<!--[if lte IE 8]><!--<script src="assets/js/ie/html5shiv.js"></script>--><![endif]-->
+		{% load staticfiles %}
+		<link href="{% static "assets/js/ie/html5shiv.js" %}" rel="script"/>
+		<!--<link rel="stylesheet" href="assets/css/main.css" />-->
+		<link href="{% static "assets/css/main.css" %}" rel="stylesheet" type="text/css"/>
+		<!--[if lte IE 8]><!--<link rel="stylesheet" href="assets/css/ie8.css" />--><![endif]-->
+				<link href="{% static "assets/js/jquery.min.js" %}" rel="script"/>
+		<link href="{% static "assets/js/skel.min.js" %}" rel="script"/>
+		<link href="{% static "assets/js/skel-viewport.min.js" %}" rel="script"/>
+		<link href="{% static "assets/js/util.js" %}" rel="script"/>
+			<!--<script src="assets/js/jquery.min.js"></script>-->
+			<!--<script src="assets/js/jquery.dropotron.min.js"></script>-->
+			<!--<script src="assets/js/skel.min.js"></script>-->
+			<!--<script src="assets/js/skel-viewport.min.js"></script>-->
+			<!--<script src="assets/js/util.js"></script>-->
+			<!--&lt;!&ndash;[if lte IE 8]><!--<script src="assets/js/ie/respond.min.js"></script>-->
+			<!--<script src="assets/js/main.js"></script>-->
+	<link href="{% static "assets/js/main.js" %}" rel="script"/>
+
+	</head>
+	<body class="homepage">
+		<div id="page-wrapper">
+			<!-- Header -->
+				<div id="header-wrapper">
+					<div id="header" class="container">
+
+						<!-- Logo -->
+
+<center>
+    <h1> Welcome to meet-me</h1>
+<form action="" method="post">{% csrf_token %}
+    <!--<p><label for="id_username">Username:</label> <input id="id_username" maxlength="254" name="username" type="username" /></p>-->
+<!--<p><label for="id_password">Password:</label> <input id="id_password" maxlength="128" name="password" type="password" /></p>-->
+    <!--<br> <br>-->
+    <!--<input type="submit" value="Sign in" />-->
+		<p><label for="id_username">Username:</label> <input id="id_username" name="username" type="username" /></p>
+<p><label for="id_password">Password:</label> <input id="id_password" name="password" type="password" /></p><br/>
+	<input type="submit" value="Sign in" />
+</form>
+
+    <br>
+    If you are new to meet-me, please <a href="/register/">register</a>
+    <br>
+    alternatively<br>
+<form method="LINK" action="{% url "socialauth_begin" "google-oauth2" %}">
+<input type="submit" value="Sign in with Google">
+</form>
+</center>
+						<br>
+<form action="{% url 'facebook_connect' %}?facebook_login=1" method="post">
+    <input type="hidden" value="{{ request.path }}" name="/" />
+    <input type="hidden" value="{{ request.path }}" name="/" />
+    <input type="hidden" value="{{ request.path }}" name="/" />
+    {% csrf_token %}
+    <input onclick="F.connect(this.parentNode); return false;" type="image" src="{{ STATIC_URL }}django_facebook/images/facebook_login.png" />
+</form>
+	</div>					<!-- Nav -->
+</div>
+
+
+
+		<!-- Scripts -->
+<link href="{{ STATIC_URL }}django_facebook/css/facebook.css" type="text/css" rel="stylesheet" media="all" />
+{% include 'django_facebook/_facebook_js.html' %}
+</div>
+	</body>
+</html>

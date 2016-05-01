@@ -1,0 +1,9 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h1>Add a meeting</h1><br>
+<form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}<br> <br>
+    <input type="submit" value="Create Meeting" />
+</form>
+{% endblock %}

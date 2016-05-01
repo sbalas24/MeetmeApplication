@@ -1,0 +1,16 @@
+{% extends "core/base.html" %}
+{% block content %}
+<h1>Pick a best time</h1><br>
+<form action="/meeting_time/" method="get">
+    <label>{{message}}</label>
+        <select name="meet">
+        <option value="{{ meeting.id }}">{{ meeting.meeting_name }}</option>
+        </select>
+    <label>Possible meeting times:</label><select name="meetingtime">
+        {% for time in meeting_time %}
+        <option value="{{ time }}">{{ time }}</option>
+        {% endfor %}
+    </select>
+<input type="submit" value="Submit" />
+</form>
+{% endblock %}

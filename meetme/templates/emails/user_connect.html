@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+Hi {{name}}
+<br>
+Meetme user {{connector.username}} has requested to connect your account to his account on meetme. You may approve or reject this request.
+<br>
+Click to Accept or Reject the invitation.
+<a href="{{ url }}/connectrequest/?connector={{connector.id}}&connectee={{connectee.id}}&action=yes">Accept</a>
+<a href="{{ url }}/connectrequest/">Reject</a>
+<br>
+<center>
+    <a href="{{unsub}}">Unsubscribe</a>
+    </center>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+<h1>Add participants</h1> <br> <br>
+<form action="/addParticipants/" method="get">
+    <label>Meeting:</label><select name="meeting">
+        {% for meeting_details in meetings %}
+        <option value="{{ meeting_details.id }}">{{ meeting_details.meeting_name }}</option>
+        {% endfor %}
+    </select>
+    <label>Required Participants:</label><select name="req_participant" multiple>
+        {% for participant_details in participant %}
+        <option value="{{ participant_details.id }}">{{ participant_details.first_name}} {{participant_details.last_name }}</option>
+        {% endfor %}
+    </select>
+
+	<label>Optional Participants:</label>
+	<select name="opt_participant" multiple>
+        {% for participant_details in participant %}
+        <option value="{{ participant_details.id }}">{{ participant_details.first_name}} {{participant_details.last_name }}</option>
+        {% endfor %}
+    </select>
+
+
+<input type="submit" value="Add participant" />
+<a style="float:right" href="/home/">>>Back to home</a>
+</form>
+{% endblock content %}

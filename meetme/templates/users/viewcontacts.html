@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+<h1>Contacts</h1><br> <br>
+
+<form action="" method="get">
+    <label></label>
+    <ul>
+        {% for name in names %}
+        <li>{{ name }}</li>
+        {% endfor %}
+    </ul>
+</form>
+
+<a style="float:right" href="/home/">>>Back to home</a>
+{% endblock content %}

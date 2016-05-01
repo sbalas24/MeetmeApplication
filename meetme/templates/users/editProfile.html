@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+
+
+<form action="" method="get">
+
+    <label>Username:</label> <input id="id_username" maxlength="30" name="username"
+value="{{uname}}"/>
+    <label for="id_email">Email address:</label> <input id="id_email" maxlength="254"
+name="email" type="email" value="{{email}}" />
+
+<label for="id_first_name">First name:</label> <input id="id_first_name" maxlength="30"
+name="first_name"  value="{{fname}}" />
+<label for="id_last_name">Last name:</label> <input id="id_last_name" maxlength="30"
+name="last_name"  value="{{lname}}" /><br><br>
+    <input type="submit" value="Submit" />
+
+</form>
+<a style="float:right" href="/home/">>>Back to home</a>
+
+{% endblock content %}

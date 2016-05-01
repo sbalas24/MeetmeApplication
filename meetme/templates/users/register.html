@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+		<title>Meet me</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<!--[if lte IE 8]><!--<script src="assets/js/ie/html5shiv.js"></script>--><![endif]-->
+		{% load staticfiles %}
+		<link href="{% static "assets/js/ie/html5shiv.js" %}" rel="script"/>
+		<!--<link rel="stylesheet" href="assets/css/main.css" />-->
+		<link href="{% static "assets/css/main.css" %}" rel="stylesheet" type="text/css"/>
+		<!--[if lte IE 8]><!--<link rel="stylesheet" href="assets/css/ie8.css" />--><![endif]-->
+				<link href="{% static "assets/js/jquery.min.js" %}" rel="script"/>
+		<link href="{% static "assets/js/skel.min.js" %}" rel="script"/>
+		<link href="{% static "assets/js/skel-viewport.min.js" %}" rel="script"/>
+		<link href="{% static "assets/js/util.js" %}" rel="script"/>
+			<!--<script src="assets/js/jquery.min.js"></script>-->
+			<!--<script src="assets/js/jquery.dropotron.min.js"></script>-->
+			<!--<script src="assets/js/skel.min.js"></script>-->
+			<!--<script src="assets/js/skel-viewport.min.js"></script>-->
+			<!--<script src="assets/js/util.js"></script>-->
+			<!--&lt;!&ndash;[if lte IE 8]><!--<script src="assets/js/ie/respond.min.js"></script>-->
+			<!--<script src="assets/js/main.js"></script>-->
+	<link href="{% static "assets/js/main.js" %}" rel="script"/>
+
+	</head>
+    <body class="homepage">
+		<div id="page-wrapper">
+			<!-- Header -->
+				<div id="header-wrapper">
+					<div id="header" class="container">
+
+						<!-- Logo -->
+
+<h1>Create a new <br><br></h1>
+        <h1>meet-me account</h1>
+        <br>
+<form action="" method="post">{% csrf_token %}
+
+    <label for="id_username">Username:</label> <input id="id_username" maxlength="30" name="username" type="username" />
+    <label for="id_email">Email address:</label> <input id="id_email" maxlength="254" name="email" type="email" />
+<label for="id_password">Password:</label> <input id="id_password" maxlength="128" name="password" type="password" />
+<label for="id_first_name">First name:</label> <input id="id_first_name" maxlength="30" name="first_name" type="firstname" />
+<label for="id_last_name">Last name:</label> <input id="id_last_name" maxlength="30" name="last_name" type="lastname" /><br><br>
+    <input type="submit" value="Sign up" />
+</form>
+    <br>
+    If you already have an account, please <a href="/login/">login</a>
+    <br>
+    alternatively <a href='{% url "socialauth_begin" "google-oauth2" %}'>Sign in with google</a>
+
+	</div>					<!-- Nav -->
+</div>
+</div>
+	</body>
+</html>
+
+
+

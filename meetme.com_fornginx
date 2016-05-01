@@ -1,0 +1,16 @@
+server {
+        listen          80;
+        server_name    	ec2-52-32-130-148.us-west-2.compute.amazonaws.com; 
+        access_log /var/log/nginx/access.log;
+        error_log /var/log/nginx/error.log;
+
+	location / {
+	uwsgi_pass      unix:///var/uwsgi/meetme.sock;
+        include         uwsgi_params;
+    }
+	location /static {
+        alias /home/ubuntu/apps/django_projects/meetme_prod/meetme/static/;
+    }
+
+
+}

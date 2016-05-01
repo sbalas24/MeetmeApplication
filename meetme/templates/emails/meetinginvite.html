@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+Hi {{name}}
+<br>
+You have been added to the meeting {{meeting.meeting_name}} by {{host}}.<br/>
+Click to accept or decline the invitation. <br/>
+<a href="{{ url }}/declineMeeting/?meeting_id={{meeting.id}}&id={{id}}">Decline</a>
+<a href="{{ url }}/acceptMeeting">Accept</a>
+<br/>
+<center>
+    <a href="{{website}}">Unsubscribe</a>
+    </center>
+</body>
+</html>

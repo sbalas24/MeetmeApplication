@@ -1,0 +1,32 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h1>Meeting Notifications</h1>
+        <br><br>
+        <br>
+
+<table style="font-color:'blue';border:1px solid black">
+    <tr style="border:1px solid black">
+        <td bgcolor="e0e0e0"> Start Time</font></td>
+		<td bgcolor="e0e0e0"> End Time</font></td>
+        <td bgcolor="e0e0e0"> Name</font></td>
+        <td bgcolor="e0e0e0">Host</font></td>
+    </tr>
+{% for article in object_list %}
+    <tr style="border:1px solid black">
+        <td>{{ article.meeting.start_time }} </td>
+		<td>{{ article.meeting.end_time }} </td>
+    <td> <a href="\manageNotification\?Notname={{article.meeting.meeting_name}}">{{ article.meeting.meeting_name }}</a></td>
+        <td>{{ article.meeting.user.first_name }}</td>
+
+        </tr>
+{% empty %}
+    <b>No Meetings yet</b></li>
+{% endfor %}
+    </table>
+<form action="" method="post">{% csrf_token %}
+<input type="submit" value="OK" />
+</form>
+
+<a style="float:right" href="/home/">>>Back to home</a>
+{% endblock content %}

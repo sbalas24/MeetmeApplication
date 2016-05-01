@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h1>Meetings</h1>
+        <br><br>
+        <br>
+
+<form action="" method="get">
+    <label>Meeting:</label>
+    <select name="unique_cancel">
+        {% for article in meeting %}
+        <option value="{{ article.id }}">{{ article.meeting_name }}</option>
+        {% endfor %}
+    </select>
+
+<input type="submit" value="Withdraw" />
+</form>
+
+<a style="float:right" href="/home/">>>Back to home</a>
+{% endblock content %}
+

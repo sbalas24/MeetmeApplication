@@ -1,0 +1,30 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<form action="" method="get">
+    <label>Meeting:</label>
+<table style="font-color:'blue';border:1px solid black">
+    <tr style="border:1px solid black">
+        <td bgcolor="e0e0e0"> Start Time</font></td>
+		<td bgcolor="e0e0e0"> End Time</font></td>
+        <td bgcolor="e0e0e0"> Name</font></td>
+        <td bgcolor="e0e0e0">Description</font></td>
+    </tr>
+        {% for article in meeting %}
+    <tr style="border:1px solid black">
+        <td>{{ article.start_time }} </td>
+		<td>{{ article.end_time }} </td>
+    <td> <a href="/SpecificMeetingDetails/?mname={{article.id}}">{{ article.meeting_name }}</a> </td>
+        <td>{{ article.description }}</td>
+        </tr>
+        {% endfor %}
+<br>
+    <br>
+    </table>
+
+</form>
+<a href="/withdrawMeeting/">Click here to withdraw from a meeting</a><br/>
+<a href="/cancelMeeting/">Click here to cancel a meeting</a><br/>
+<a style="float:right" href="/home/">>>Back to home</a>
+
+{% endblock content %}

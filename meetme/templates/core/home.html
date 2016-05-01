@@ -1,0 +1,14 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <p >Welcome, {{ user.get_username }}</p>
+{% endif %}
+<br>
+
+	<h1>Meet me</h1>
+	<p font-color="e0e0e0">Decide.Meet.Get it done.</p>
+
+
+{% endblock content %}

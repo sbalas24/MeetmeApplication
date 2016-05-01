@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Meet me</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<!--[if lte IE 8]><!--<script src="assets/js/ie/html5shiv.js"></script>--><![endif]-->
+		{% load staticfiles %}
+		<link href="{% static "assets/js/ie/html5shiv.js" %}" rel="script"/>
+		<!--<link rel="stylesheet" href="assets/css/main.css" />-->
+		<link href="{% static "assets/css/main.css" %}" rel="stylesheet" type="text/css"/>
+		<!--[if lte IE 8]><!--<link rel="stylesheet" href="assets/css/ie8.css" />--><![endif]-->
+				<link href="{% static "assets/js/jquery.min.js" %}" rel="script"/>
+		<link href="{% static "assets/js/skel.min.js" %}" rel="script"/>
+		<link href="{% static "assets/js/skel-viewport.min.js" %}" rel="script"/>
+		<link href="{% static "assets/js/util.js" %}" rel="script"/>
+			<!--<script src="assets/js/jquery.min.js"></script>-->
+			<!--<script src="assets/js/jquery.dropotron.min.js"></script>-->
+			<!--<script src="assets/js/skel.min.js"></script>-->
+			<!--<script src="assets/js/skel-viewport.min.js"></script>-->
+			<!--<script src="assets/js/util.js"></script>-->
+			<!--&lt;!&ndash;[if lte IE 8]><!--<script src="assets/js/ie/respond.min.js"></script>-->
+			<!--<script src="assets/js/main.js"></script>-->
+	<link href="{% static "assets/js/main.js" %}" rel="script"/>
+
+	</head>
+	<body class="homepage">
+		<div id="page-wrapper">
+			<!-- Header -->
+				<div id="header-wrapper">
+					<div id="header" class="container">
+
+
+										<!-- Logo -->
+                     <center><nav id="primary_nav_wrap">
+<ul>
+  <li><a href="#">Meetings</a>
+    <ul>
+      <li><a href="/meeting/"><span>Schedule meeting</span></a></li>
+      <li><a href="/participants/"><span>Add Participant</span></a></li>
+      <li><a href="/meetings/all/"><span>My meetings</span></a></li>
+    </ul>
+  </li>
+  <li><a href="#">Contacts</a>
+    <ul>
+      <li><a href="/addContact/"><span>Add contact</span></a></li>
+      <li><a href="/view/"><span>My Contacts</span></a></li>
+    </ul>
+  </li>
+  <li><a href='/calendar/'><span>View calendar</span></a></li>
+  <li><a href="/meetings/notifications/"><span>Notifications</span></a></li>
+	<li><a href="#">Profile</a>
+    <ul>
+		<li><a href="/editProfile/?ep=hey"><span>Edit Profile</span></a></li>
+		<li><a href="/connect/"><span>Connect profile</span></a></li>
+		<li><a href="/logout/"><span>Logout</span></a></li>
+	</ul>
+	</li>
+</ul>
+</nav>
+                       </center>
+<br/>
+                        <center>
+{% block content %}
+    {% endblock %}
+
+</center>
+
+
+
+
+</div>
+</div>
+
+            </div>
+    </body>
+</html>

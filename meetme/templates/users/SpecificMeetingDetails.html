@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+    <label><b>Name :</b> {{name.meeting_name}}</label><br>
+    <label><b>Start Time : </b>{{name.start_time}}</label><br>
+<label><b>End time : </b>{{name.end_time}}</label><br>
+<label><b>Duration :</b> {{name.duration}}</label><br>
+<label><b>Description :</b> {{name.description}}</label><br>
+<label><b>Host :</b> {{host}}</label><br>
+    <label> <b>Participants of meeting:</b></label>
+    <br>
+    {% for participant_name in participants %}
+    <label>{{participant_name}}</label><br>
+{% endfor %}
+
+<form action="/" method="get">
+<input type="submit" value="Okay" />
+<input type="button" onclick="location.href='/{{ url }}/?meetingid={{name.id}}'" value="{{label}}" />
+</form>
+
+{% endblock content %}
